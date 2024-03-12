@@ -19,7 +19,8 @@ public class navmeshtest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(agent.hasPath)
+        agent.destination = targetLocation.position;
+        if (agent.hasPath)
         {
             var dir = (agent.steeringTarget - transform.position).normalized;
             var animDir = transform.InverseTransformDirection(dir);
