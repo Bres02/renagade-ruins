@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class navmeshtest : MonoBehaviour
+public class SpiderEnemy : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Animator animator;
@@ -18,35 +18,39 @@ public class navmeshtest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         agent.destination = targetLocation.position;
-        if (agent.hasPath)
-        {
-            var dir = (agent.steeringTarget - transform.position).normalized;
-            var animDir = transform.InverseTransformDirection(dir);
-            animator.SetFloat("Horizontal", animDir.x);
-            animator.SetFloat("Vertical", animDir.z);
-
-        }
-        else
-        {
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-        }
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    Debug.Log("done");
+                    animator.SetBool("Is Walking", false);
+                    animator.SetTrigger("Attacking");
+                }
+                else
+                {
+                    animator.SetBool("Is Walking", true);
                 }
             }
+            else
+            {
+                animator.SetBool("Is Walking", true);
+            }
         }
+        else
+        {
+            animator.SetBool("Is Walking", true);
+        }
+    }
+    public void SpitAttack()
+    {
+        Debug.Log("chomp");
     }
 }
