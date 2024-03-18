@@ -3,7 +3,7 @@ using KBCore.Refs;
 using UnityEngine;
 
 
-namespace RenegadeRuins {
+namespace ReagadeRuins {
     public class PlayerController : ValidatedMonoBehaviour
     {
         [Header("References")]

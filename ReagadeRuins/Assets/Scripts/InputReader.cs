@@ -4,10 +4,10 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using static PlayerInputActions;
 
-namespace RenegadeRuins {
+namespace ReagadeRuins {
 
     [CreateAssetMenu(fileName = "InputReader", menuName = "RenegadeRuins/InputReader")]
-    public class InputReader : ScriptableObject, PlayerInputActions.IPlayerActions
+    public class InputReader : ScriptableObject, IPlayerActions
     {
         public event UnityAction<Vector2> Move = delegate { };
         public event UnityAction<Vector2, bool> Look = delegate { };
@@ -16,7 +16,7 @@ namespace RenegadeRuins {
 
         PlayerInputActions inputActions;
 
-        void onEnable()
+        void Awake()
         {
             if (inputActions == null)
             {
@@ -27,7 +27,6 @@ namespace RenegadeRuins {
         }
 
         public Vector3 Direction => inputActions.Player.Move.ReadValue<Vector2>();
-
 
         public void OnMove(InputAction.CallbackContext context)
         {
