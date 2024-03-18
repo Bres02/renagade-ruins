@@ -17,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        rb.freezeRotation = false;
     }
 
     // Update is called once per frame
@@ -31,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
 
         rb.drag = groundDrag;
+
+        anim.SetFloat("vertical", Input.GetAxis("Vertical"));
+        anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
 
     }
 
