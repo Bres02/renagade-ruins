@@ -7,7 +7,10 @@ public class SpiderEnemy : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Animator animator;
+    public GameObject bullet;
     [SerializeField] private Transform targetLocation;
+    private bool attacking = false;
+    public Transform bulletSpawnPoint;
 
     private void Awake()
     {
@@ -15,24 +18,43 @@ public class SpiderEnemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.destination = targetLocation.position;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = targetLocation.position;
-        if (!agent.pathPending)
+        if (!attacking)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            agent.destination = targetLocation.position;
+            Vector3 direction = (targetLocation.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
+
+
+
+            // Check if player is within the angle range in front of the enemy
+            float angle = Vector3.Angle(transform.forward, direction);
+            if (angle < 5f) // Adjust the angle as needed
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                if (!agent.pathPending)
                 {
-                    animator.SetBool("Is Walking", false);
-                    animator.SetTrigger("Attacking");
+                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    {
+                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                        {
+                            animator.SetBool("Is Walking", false);
+                            animator.SetTrigger("Attacking");
+                            attacking = true;
+                        }
+                        else
+                        {
+                            animator.SetBool("Is Walking", true);
+                        }
+                    }
+                    else
+                    {
+                        animator.SetBool("Is Walking", true);
+                    }
                 }
                 else
                 {
@@ -46,11 +68,17 @@ public class SpiderEnemy : MonoBehaviour
         }
         else
         {
-            animator.SetBool("Is Walking", true);
+            agent.destination = this.transform.position;
         }
+
     }
     public void SpitAttack()
     {
-        Debug.Log("chomp");
+        GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    }
+    public void endAttack()
+    {
+        attacking = false;
+        animator.SetBool("Is Walking", true);
     }
 }
