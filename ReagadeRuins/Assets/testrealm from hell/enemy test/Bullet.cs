@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f; 
+    public float speed = 10f;
+    public AttributeManager atm;
+    private int damage;
 
     private Rigidbody rb;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * speed; 
+        rb.velocity = transform.forward * speed;
+
+        damage = atm.attack;
     }
     void FixedUpdate()
     {
@@ -18,6 +22,7 @@ public class Bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-
+        collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
+        
     }
 }
