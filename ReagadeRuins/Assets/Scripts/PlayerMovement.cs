@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.drag = groundDrag;
 
-        anim.SetFloat("vertical", Input.GetAxis("Vertical"));
-        anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+        anim.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 
     }
 
@@ -44,10 +44,17 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    // Records movement and attack input from player
     private void MyInput()
     {
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
+
+        // Pressed right mouse button -> sword attack
+        if (Input.GetMouseButtonDown(1))
+        {
+            anim.SetTrigger("SwordAttack");
+        }
     }
 
     private void MovePlayer()

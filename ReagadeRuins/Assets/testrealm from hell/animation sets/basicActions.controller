@@ -117,7 +117,11 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 1
     m_Controller: {fileID: 0}
+<<<<<<< Updated upstream
   - m_Name: Attack
+=======
+  - m_Name: SwordAttack
+>>>>>>> Stashed changes
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -388,7 +392,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Attack
+    m_ConditionEvent: SwordAttack
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4941028792256496005}
