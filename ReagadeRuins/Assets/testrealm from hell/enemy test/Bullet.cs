@@ -21,9 +21,13 @@ public class Bullet : MonoBehaviour
     {
         rb.MovePosition(rb.position + rb.velocity * Time.fixedDeltaTime);
     }
-    void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
+            Debug.Log("hit");
+            Destroy(this.gameObject);
+        }
     }
 }
