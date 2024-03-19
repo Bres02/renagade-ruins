@@ -14,9 +14,16 @@ public class AttributeManager : MonoBehaviour
 
         if (health <= 0)
         {
+            if (this.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }else if(this.gameObject.tag == "Enemy")
+            {
+                Destroy(this.gameObject);
+            }
             // TODO
             // Currently only for active scene, will need to change for starting screen/game over screen to replace.
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         } 
     }
 

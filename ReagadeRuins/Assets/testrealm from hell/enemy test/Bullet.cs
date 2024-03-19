@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    public AttributeManager atm;
     private int damage;
 
     private Rigidbody rb;
@@ -13,8 +12,10 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
-
-        damage = atm.attack;
+    }
+    public void setValues(int _damage)
+    {
+        damage = _damage;
     }
     void FixedUpdate()
     {

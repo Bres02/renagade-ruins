@@ -80,6 +80,7 @@ public class SpiderEnemy : MonoBehaviour
     public void SpitAttack()
     {
         GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        newBullet.GetComponent<Bullet>().setValues(this.GetComponent<AttributeManager>().attack);
     }
     public void endAttack()
     {

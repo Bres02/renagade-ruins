@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  atm: {fileID: 0}
 --- !u!33 &3169019348841276987
 MeshFilter:
   m_ObjectHideFlags: 0
