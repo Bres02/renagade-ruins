@@ -8,17 +8,21 @@ public class SpiderEnemy : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     public GameObject bullet;
-    [SerializeField] private Transform targetLocation;
+    private Transform targetLocation;
     private bool attacking = false;
     public Transform bulletSpawnPoint;
 
     private void Awake()
     {
+        
+    }
+    public void setinfo(gamemaneger gameManger)
+    {
+        targetLocation = gameManger.playerRefrence.transform;
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = targetLocation.position;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -36,6 +40,7 @@ public class SpiderEnemy : MonoBehaviour
             float angle = Vector3.Angle(transform.forward, direction);
             if (angle < 5f) // Adjust the angle as needed
             {
+                Debug.Log("hi");
                 if (!agent.pathPending)
                 {
                     if (agent.remainingDistance <= agent.stoppingDistance)
