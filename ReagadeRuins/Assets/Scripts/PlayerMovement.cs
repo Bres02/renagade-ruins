@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator anim;
 
+    public bool isDodging = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,13 +31,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        MyInput();
-        SpeedControl();
+        if (!isDodging)
+        {
+            MyInput();
+            SpeedControl();
 
-        rb.drag = groundDrag;
+            rb.drag = groundDrag;
 
-        anim.SetFloat("Vertical", Input.GetAxis("Vertical"));
-        anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+            anim.SetFloat("Vertical", Input.GetAxis("Vertical"));
+            anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        }
+        
 
     }
 
@@ -49,12 +55,20 @@ public class PlayerMovement : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
+        
+        
+         // Pressed right mouse button -> sword attack
+         if (Input.GetMouseButtonDown(1))
+         {
+                anim.SetTrigger("SwordAttack");
+         }
+          
+         if(Input.GetKeyDown(KeyCode.Space))
+         {
+                anim.SetTrigger("DodgeRoll");
+         }
+       
 
-        // Pressed right mouse button -> sword attack
-        if (Input.GetMouseButtonDown(1))
-        {
-            anim.SetTrigger("SwordAttack");
-        }
     }
 
     private void MovePlayer()
@@ -75,6 +89,19 @@ public class PlayerMovement : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+    }
+
+    public void startDodge()
+    {
+        isDodging = true;
+        this.GetComponent<CapsuleCollider>().enabled = false;
+    }
+    public void endDodge()
+    {
+        this.GetComponent<CapsuleCollider>().enabled = enabled;
+        this.transform.rotation *= anim.deltaRotation;
+        this.transform.position += anim.deltaPosition;
+        isDodging = false;
     }
 
 }
