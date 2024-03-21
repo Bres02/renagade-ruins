@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         
         
          // Pressed right mouse button -> sword attack
+         // TODO: Make an isAttacking bool to prevent attack spam clicking
          if (Input.GetMouseButtonDown(1))
          {
                 anim.SetTrigger("SwordAttack");
