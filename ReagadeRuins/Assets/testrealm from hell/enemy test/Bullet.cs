@@ -28,6 +28,9 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
             Debug.Log("hit");
             Destroy(this.gameObject);
+        } else if (collision.gameObject.tag == "Structure")
+        {
+            Destroy(this.gameObject);
         }
     }
 }
