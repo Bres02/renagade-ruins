@@ -422,12 +422,12 @@ GameObject:
   - component: {fileID: 922132101770345063}
   - component: {fileID: 4530925690960056040}
   - component: {fileID: 1580707960328052507}
-  - component: {fileID: -1833036106897961022}
+  - component: {fileID: 7549216009866192606}
   - component: {fileID: 7065117815467130719}
   - component: {fileID: 5801083044440612902}
   m_Layer: 0
   m_Name: first enemey
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,9 +483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d10be5a8e5b794bb82bceb45049d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7546464989957006558, guid: ae7713346c381b14395acf2e48d10e08, type: 3}
+  enemyScript: {fileID: 11400000, guid: ee441b25c1b99fd4cb8b042b56b64b7a, type: 2}
   bulletSpawnPoint: {fileID: 3912144859680215070}
---- !u!114 &-1833036106897961022
+--- !u!114 &7549216009866192606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,11 +494,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769214454547752618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53a0a5ca96213a4f8e89f4cf7f75b5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e93d327c498104786f621ee124dc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  attack: 5
+  enemyScript: {fileID: 11400000, guid: ee441b25c1b99fd4cb8b042b56b64b7a, type: 2}
 --- !u!195 &7065117815467130719
 NavMeshAgent:
   m_ObjectHideFlags: 0

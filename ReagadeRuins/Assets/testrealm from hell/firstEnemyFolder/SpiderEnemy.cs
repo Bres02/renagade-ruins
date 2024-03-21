@@ -5,23 +5,21 @@ using UnityEngine.AI;
 
 public class SpiderEnemy : MonoBehaviour
 {
+    public EnemyScriptableObject enemyScript;
     private NavMeshAgent agent;
     private Animator animator;
-    public GameObject bullet;
     private Transform targetLocation;
     private bool attacking = false;
     public Transform bulletSpawnPoint;
+    private int currentHealth;
 
-    private void Awake()
-    {
-        
-    }
     public void setinfo(gamemaneger gameManger)
     {
         targetLocation = gameManger.playerRefrence.transform;
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = targetLocation.position;
+        currentHealth = enemyScript.maxHealth;
     }
 
     // Update is called once per frame
@@ -77,10 +75,13 @@ public class SpiderEnemy : MonoBehaviour
         }
 
     }
+
+
+
     public void SpitAttack()
     {
-        GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        newBullet.GetComponent<Bullet>().setValues(this.GetComponent<AttributeManager>().attack);
+        GameObject newBullet = Instantiate(enemyScript.projectile, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        newBullet.GetComponent<Bullet>().setValues(enemyScript.damage);
     }
     public void endAttack()
     {

@@ -25,9 +25,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
-            Debug.Log("hit");
-            Destroy(this.gameObject);
+           collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
+           Destroy(this.gameObject);
         }
     }
 }

@@ -11,7 +11,7 @@ public class WeaponAttributes : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<AttributeManager>().TakeDamage(atm.attack);
+            other.GetComponent<EnemyHealthControler>().takeDamae(atm.attack);
         }
     }
 }
