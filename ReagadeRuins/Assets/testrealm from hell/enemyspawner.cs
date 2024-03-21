@@ -27,7 +27,7 @@ public class enemyspawner : MonoBehaviour
         while (true)
         {
             yield return wait;
-            GameObject newEnemy = Instantiate(enemy);
+            GameObject newEnemy = Instantiate(enemy, this.transform);
             newEnemy.GetComponent<SpiderEnemy>().setinfo(gamemaneger);
         }
     }
