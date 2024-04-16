@@ -76,8 +76,6 @@ public class SpiderEnemy : MonoBehaviour
 
     }
 
-
-
     public void SpitAttack()
     {
         GameObject newBullet = Instantiate(enemyScript.projectile, bulletSpawnPoint.position, bulletSpawnPoint.rotation);

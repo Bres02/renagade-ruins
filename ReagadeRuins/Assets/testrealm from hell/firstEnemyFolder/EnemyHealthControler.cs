@@ -10,7 +10,7 @@ public class EnemyHealthControler : MonoBehaviour
     {
         currentHealth = enemyScript.maxHealth;
     }
-    public void takeDamae(int damage)
+    public void TakeDamae(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
