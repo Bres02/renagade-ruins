@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36239acc397dce4799af3331f9e5c1c, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  triggerName: Attack1
+  childLocation: 2
+  damage: 500
+  casttime: 5
+  ablilityRadius: 0
+  range: 100
+  cooldown: 65
+  bosscooldown: 3

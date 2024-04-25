@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HueControl : MonoBehaviour
 {
+    public GameObject boss;
+
     public float hue = 0;
 
     public HueValue[] hues;
@@ -23,5 +25,8 @@ public class HueControl : MonoBehaviour
             hues[i].hue = hue;
         }
     }
-
+    public void ended()
+    {
+        boss.GetComponent<bossControler>().abilityFinish();
+    }
 }

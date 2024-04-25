@@ -53,12 +53,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _QueueControl: -1
+    - _QueueControl: 1
     - _QueueOffset: 0
     m_Colors:
     - _Color1: {r: 5.3403134, g: 0.54450256, b: 0.54450256, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7263491292165053897
+--- !u!114 &3292572540045278165
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

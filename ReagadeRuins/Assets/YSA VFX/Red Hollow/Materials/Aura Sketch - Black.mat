@@ -69,12 +69,12 @@ Material:
     - Vector1_44F27708: 0.336
     - Vector1_D522AE9C: 1
     - _Anim: 0
-    - _QueueControl: -1
+    - _QueueControl: 1
     - _QueueOffset: 0
     m_Colors:
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &788789960371543549
+--- !u!114 &153378189477473216
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
