@@ -38,7 +38,6 @@ public class SpiderEnemy : MonoBehaviour
             float angle = Vector3.Angle(transform.forward, direction);
             if (angle < 5f) // Adjust the angle as needed
             {
-                Debug.Log("hi");
                 if (!agent.pathPending)
                 {
                     if (agent.remainingDistance <= agent.stoppingDistance)

@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36239acc397dce4799af3331f9e5c1c, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   triggerName: Attack1
   childLocation: 1
   damage: 5
   casttime: 5
   ablilityRadius: 0
   range: 100
-  cooldown: 4
-  bosscooldown: 4
+  cooldown: 100
+  bosscooldown: 1
+  isSpawned: 0

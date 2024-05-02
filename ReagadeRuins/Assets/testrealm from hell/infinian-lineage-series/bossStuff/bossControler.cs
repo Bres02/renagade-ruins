@@ -18,6 +18,7 @@ public class bossControler : MonoBehaviour
     public int abilityQued;
     
     public GameObject player;
+    public Transform attacklocation;
     
     private NavMeshAgent agent;
     public gamemaneger gamemaneger;
@@ -66,17 +67,27 @@ public class bossControler : MonoBehaviour
                     }
                 }
             }
-            if (attacks[abilityQued].range > Vector3.Distance(this.transform.position, gamemaneger.playerRefrence.transform.position) && canAttack)
-            {
-                agent.destination = this.transform.position;
-                isCasting = true;
-                startcasting();
-                canAttack = false;
-            }
-            else
+            if (abilityQued >= 0)
             {
                 agent.destination = gamemaneger.playerRefrence.transform.position;
+                Vector3 direction = (gamemaneger.playerRefrence.transform.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
+                float angle = Vector3.Angle(transform.forward, direction);
+
+                if (attacks[abilityQued].range > Vector3.Distance(this.transform.position, gamemaneger.playerRefrence.transform.position) && canAttack && angle < 5f)
+                {
+                    agent.destination = this.transform.position;
+                    isCasting = true;
+                    startcasting();
+                    canAttack = false;
+                }
+                else
+                {
+                    agent.destination = gamemaneger.playerRefrence.transform.position;
+                }
             }
+            
 
         }
         else
@@ -89,6 +100,10 @@ public class bossControler : MonoBehaviour
     {
         this.transform.GetChild(attacks[abilityQued].childLocation).gameObject.SetActive(true);
         animator.SetTrigger(attacks[abilityQued].triggerName);
+        if (attacks[abilityQued].isSpawned)
+        {
+            this.transform.GetChild(attacks[abilityQued].childLocation).gameObject.GetComponent<attackspawner>().onActivate(attacks[abilityQued].damage);
+        }
     }
 
     public void abilityFinish()
@@ -98,6 +113,12 @@ public class bossControler : MonoBehaviour
         attackCooldown = attacks[abilityQued].bosscooldown;
         isCasting = false;
         hasAbilityQued = false;
+        abilityQued = -1;
+    }
+
+    public void stop()
+    {
+        animator.SetTrigger("stop");
     }
     
 }

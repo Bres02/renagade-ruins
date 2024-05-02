@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AOEAttack : MonoBehaviour
 {
-    public GameObject AOEArea;
     public float maxArea;
     public float castDuration;
     public float maxCastDuraiton;
@@ -17,26 +16,18 @@ public class AOEAttack : MonoBehaviour
         castDuration = maxCastDuraiton;
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
-
     private void FixedUpdate()
     {
         if (!hasfinished)
         {
             castDuration -= Time.deltaTime;
             calucations = maxArea * ((maxCastDuraiton - castDuration) / maxCastDuraiton);
-            AOEArea.transform.GetChild(0).transform.localScale = new Vector3(calucations, AOEArea.transform.GetChild(0).transform.localScale.y, AOEArea.transform.GetChild(0).transform.localScale.z);
+            this.transform.GetChild(0).transform.localScale = new Vector3(calucations, this.transform.GetChild(0).transform.localScale.y, this.transform.GetChild(0).transform.localScale.z);
         }
         if (castDuration <= 0)
         {
             hasfinished = true;
-            AOEArea.transform.GetChild(0).transform.localScale = new Vector3(maxArea, AOEArea.transform.GetChild(0).transform.localScale.y, AOEArea.transform.GetChild(0).transform.localScale.z);
+            this.transform.GetChild(0).transform.localScale = new Vector3(maxArea, this.transform.GetChild(0).transform.localScale.y, this.transform.GetChild(0).transform.localScale.z);
         }
 
     }
