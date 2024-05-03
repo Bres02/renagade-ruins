@@ -34026,8 +34026,7 @@ GameObject:
   - component: {fileID: 8829451551789304536}
   - component: {fileID: 8829451551789304543}
   - component: {fileID: 3630983130738417110}
-  - component: {fileID: 781096599145508535}
-  - component: {fileID: 2139435493977782387}
+  - component: {fileID: 80904407581166551}
   m_Layer: 0
   m_Name: VFX_Fire_01_Big
   m_TagString: Untagged
@@ -38956,7 +38955,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &781096599145508535
+--- !u!114 &80904407581166551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38968,24 +38967,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb5f7529f708d84fb34237595b2529b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &2139435493977782387
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8829451551789304542}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 1255053967005034565}
   - component: {fileID: 1255053967005034562}
   - component: {fileID: 3388423825752734067}
-  - component: {fileID: -2675967371759655008}
+  - component: {fileID: -6016355632998946762}
   m_Layer: 0
   m_Name: VFX_Fire_Floor_02_Smoke
   m_TagString: Untagged
@@ -9780,7 +9780,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-2675967371759655008
+--- !u!114 &-6016355632998946762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
