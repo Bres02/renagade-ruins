@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapTile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // The fires to use for the trap tiles
     [SerializeField] private GameObject initialFlame;
     [SerializeField] private GameObject fire;
 
