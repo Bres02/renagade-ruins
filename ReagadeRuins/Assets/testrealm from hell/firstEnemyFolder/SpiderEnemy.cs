@@ -12,6 +12,7 @@ public class SpiderEnemy : MonoBehaviour
     private bool attacking = false;
     public Transform bulletSpawnPoint;
     private int currentHealth;
+    private float range;
 
     public void setinfo(gamemaneger gameManger)
     {
@@ -25,6 +26,7 @@ public class SpiderEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        range = agent.stoppingDistance;
         if (!attacking)
         {
             agent.destination = targetLocation.position;
@@ -84,5 +86,11 @@ public class SpiderEnemy : MonoBehaviour
     {
         attacking = false;
         animator.SetBool("Is Walking", true);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
