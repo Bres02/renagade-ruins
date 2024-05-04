@@ -1,19 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gamemaneger : MonoBehaviour
 {
     public GameObject playerRefrence;
 
     public GameObject[] puzzleTiles;
+    public persistdata persistdata;
 
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
+    {
+        playerRefrence.GetComponent<AttributeManager>().health = persistdata.currentHealth;
+    }
+    private void Update()
     {
         
     }
+    public void setStats()
+    {
+        persistdata.currentHealth = persistdata.maxHealth;
+        persistdata.currentScene = -1;
+        persistdata.pickScenes[0] = Random.Range(1,4);
+        persistdata.pickScenes[1] = Random.Range(1, 4);
+    }
+    public void Exit()
+    {
+
+    }
+
+    public void loadNext()
+    {
+        persistdata.currentHealth = playerRefrence.GetComponent<AttributeManager>().health;
+        persistdata.currentScene++;
+        SceneManager.LoadScene(persistdata.currentScene);
+    }
+
 
     public void CheckTiles()
     {
@@ -26,9 +50,6 @@ public class gamemaneger : MonoBehaviour
                 x += 1;
             }
         }
-
-        
-
         if (x == puzzleTiles.Length) 
         {
             Debug.Log(puzzleTiles.Length);

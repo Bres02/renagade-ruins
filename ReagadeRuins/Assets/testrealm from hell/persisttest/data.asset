@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36239acc397dce4799af3331f9e5c1c, type: 3}
-  m_Name: 3
+  m_Script: {fileID: 11500000, guid: 8c2d741e0a3e7784c99a56e5c0acfcd7, type: 3}
+  m_Name: data
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  triggerName: Attack1
-  childLocation: 2
-  damage: 500
-  casttime: 5
-  ablilityRadius: 0
-  range: 100
-  cooldown: 65
-  bosscooldown: 1
-  isSpawned: 0
+  pickScenes: 000000000000000005000000
+  maxHealth: 100
+  currentHealth: 0
+  currentScene: 0

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRefrence: {fileID: 0}
+  puzzleTiles: []
+  persistdata: {fileID: 11400000, guid: 860dd37674dfbc24e948cb276dcfb44b, type: 2}
