@@ -9,7 +9,7 @@ public class WeaponAttributes : MonoBehaviour
     // Deals damage to enemy, specifically
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
             other.GetComponent<EnemyHealthControler>().TakeDamae(atm.attack);
         }

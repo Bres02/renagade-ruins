@@ -95,11 +95,9 @@ public class PlayerMovement : MonoBehaviour
     public void startDodge()
     {
         isDodging = true;
-        this.GetComponent<CapsuleCollider>().enabled = false;
     }
     public void endDodge()
     {
-        this.GetComponent<CapsuleCollider>().enabled = enabled;
         this.transform.rotation *= anim.deltaRotation;
         this.transform.position += anim.deltaPosition;
         isDodging = false;
