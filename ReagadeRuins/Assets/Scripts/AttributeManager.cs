@@ -10,7 +10,17 @@ public class AttributeManager : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        health -= amount;
+        if (this.gameObject.tag == "Player")
+        {
+            if (this.gameObject.GetComponent<PlayerMovement>().isDodging)
+            {
+                health -= 0;
+            }
+        }
+        else
+        {
+            health -= amount;
+        }
 
         if (health <= 0)
         {

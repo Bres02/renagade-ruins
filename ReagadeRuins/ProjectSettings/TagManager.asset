@@ -9,6 +9,7 @@ TagManager:
   - Structure
   - PuzzleTile
   - buildup
+  - Boss
   layers:
   - Default
   - TransparentFX

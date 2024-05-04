@@ -3576,8 +3576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae50b6ff2fbd47242becd8eff420cc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  groundDrag: 3
+  moveSpeed: 10
+  groundDrag: 9
   orientation: {fileID: 393050671}
   anim: {fileID: 1788952937}
   isDodging: 0
