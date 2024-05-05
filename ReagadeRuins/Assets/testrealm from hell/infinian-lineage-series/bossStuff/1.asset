@@ -15,7 +15,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   triggerName: Attack1
   childLocation: 0
-  damage: 20
+  damage: 50
   casttime: 5
   ablilityRadius: 0
   range: 100

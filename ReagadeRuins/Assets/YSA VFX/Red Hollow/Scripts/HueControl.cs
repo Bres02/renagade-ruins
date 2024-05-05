@@ -27,6 +27,8 @@ public class HueControl : MonoBehaviour
     }
     public void ended()
     {
+        transform.parent.transform.parent.GetComponent<BoxCollider>().enabled = false;
         boss.GetComponent<bossControler>().abilityFinish();
+
     }
 }

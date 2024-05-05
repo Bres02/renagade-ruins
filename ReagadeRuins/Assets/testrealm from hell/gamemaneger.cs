@@ -17,6 +17,7 @@ public class gamemaneger : MonoBehaviour
         {
             playerRefrence.GetComponent<AttributeManager>().health = persistdata.currentHealth;
         }
+
     }
     private void Update()
     {

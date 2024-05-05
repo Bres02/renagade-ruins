@@ -20,9 +20,11 @@ public class AttributeManager : MonoBehaviour
             if (this.gameObject.GetComponent<PlayerMovement>().isDodging)
             {
                 health -= 0;
+
             }
             else
             {
+                
                 health -= amount;
                 healthbar.GetComponent<Slider>().value = health;
             }

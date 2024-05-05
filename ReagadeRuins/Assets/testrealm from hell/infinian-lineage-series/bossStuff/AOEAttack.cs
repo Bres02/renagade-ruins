@@ -15,6 +15,11 @@ public class AOEAttack : MonoBehaviour
     {
         castDuration = maxCastDuraiton;
     }
+    private void OnEnable()
+    {
+        castDuration = maxCastDuraiton;
+
+    }
 
     private void FixedUpdate()
     {
@@ -26,13 +31,29 @@ public class AOEAttack : MonoBehaviour
         }
         if (castDuration <= 0)
         {
+            transform.GetComponent<BoxCollider>().enabled = true;
             hasfinished = true;
             this.transform.GetChild(0).transform.localScale = new Vector3(maxArea, this.transform.GetChild(0).transform.localScale.y, this.transform.GetChild(0).transform.localScale.z);
         }
 
     }
 
-
+    /*public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<AttributeManager>().TakeDamage(transform.parent.GetComponent<bossControler>().attacks[transform.parent.GetComponent<bossControler>().abilityQued].damage);
+            transform.GetComponent<BoxCollider>().enabled = false;
+        }
+    }*/
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<AttributeManager>().TakeDamage(transform.parent.GetComponent<bossControler>().attacks[transform.parent.GetComponent<bossControler>().abilityQued].damage);
+            transform.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
 
 
     private void OnDrawGizmos()

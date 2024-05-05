@@ -15,7 +15,7 @@ MonoBehaviour:
   projectile: {fileID: 7546464989957006558, guid: ae7713346c381b14395acf2e48d10e08, type: 3}
   triggerName: bassicAttack
   childLocation: 2
-  damage: 4
+  damage: 10
   casttime: 1
   ablilityRadius: 0
   range: 100
