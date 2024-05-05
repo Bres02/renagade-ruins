@@ -13,7 +13,10 @@ public class gamemaneger : MonoBehaviour
 
     private void Awake()
     {
-        playerRefrence.GetComponent<AttributeManager>().health = persistdata.currentHealth;
+        if (persistdata.currentHealth >0)
+        {
+            playerRefrence.GetComponent<AttributeManager>().health = persistdata.currentHealth;
+        }
     }
     private void Update()
     {

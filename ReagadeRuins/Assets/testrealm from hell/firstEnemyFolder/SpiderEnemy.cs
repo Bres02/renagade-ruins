@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +13,8 @@ public class SpiderEnemy : MonoBehaviour
     private bool attacking = false;
     public Transform bulletSpawnPoint;
     private int currentHealth;
-    private float range;
+    private float range = 13f;
+    public quaternion rotaiton;
 
     public void setinfo(gamemaneger gameManger)
     {
@@ -26,7 +28,6 @@ public class SpiderEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        range = agent.stoppingDistance;
         if (!attacking)
         {
             agent.destination = targetLocation.position;
@@ -42,18 +43,12 @@ public class SpiderEnemy : MonoBehaviour
             {
                 if (!agent.pathPending)
                 {
-                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    if (agent.remainingDistance <= 13f)
                     {
-                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                        {
-                            animator.SetBool("Is Walking", false);
-                            animator.SetTrigger("Attacking");
-                            attacking = true;
-                        }
-                        else
-                        {
-                            animator.SetBool("Is Walking", true);
-                        }
+                        animator.SetBool("Is Walking", false);
+                        animator.SetTrigger("Attacking");
+                        attacking = true;
+                        rotaiton = transform.rotation;
                     }
                     else
                     {
@@ -74,7 +69,10 @@ public class SpiderEnemy : MonoBehaviour
         {
             agent.destination = this.transform.position;
         }
-
+        if (attacking) 
+        {
+            transform.rotation = rotaiton;
+        }
     }
 
     public void SpitAttack()

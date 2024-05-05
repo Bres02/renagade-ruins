@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AttributeManager : MonoBehaviour
 {
     public int health;
     public int attack;
-
+    public GameObject healthbar;
+    private void Awake()
+    {
+        healthbar.GetComponent<Slider>().value = health;
+    }
     public void TakeDamage(int amount)
     {
         if (this.gameObject.tag == "Player")
@@ -16,11 +21,13 @@ public class AttributeManager : MonoBehaviour
             {
                 health -= 0;
             }
+            else
+            {
+                health -= amount;
+                healthbar.GetComponent<Slider>().value = health;
+            }
         }
-        else
-        {
-            health -= amount;
-        }
+
 
         if (health <= 0)
         {
