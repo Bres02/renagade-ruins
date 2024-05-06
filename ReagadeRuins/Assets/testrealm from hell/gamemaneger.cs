@@ -30,7 +30,7 @@ public class gamemaneger : MonoBehaviour
         {
             enemiesLeftNum = maxEnemies;
         }
-        if (persistdata.currentHealth >0)
+        if (persistdata.currentHealth >0 && playerRefrence != null)
         {
             playerRefrence.GetComponent<AttributeManager>().health = persistdata.currentHealth;
         }
@@ -38,7 +38,10 @@ public class gamemaneger : MonoBehaviour
         {
             tilesLeft.text = (tilesLeftNum).ToString();
         }
-        enemiesLeft.text = enemiesLeftNum.ToString();
+        if (enemiesLeft != null)
+        {
+            enemiesLeft.text = enemiesLeftNum.ToString();
+        }
 
     }
     private void Update()
@@ -51,20 +54,24 @@ public class gamemaneger : MonoBehaviour
     public void setStats()
     {
         persistdata.currentHealth = persistdata.maxHealth;
-        persistdata.currentScene = -1;
-        persistdata.pickScenes[0] = Random.Range(1,4);
-        persistdata.pickScenes[1] = Random.Range(1, 4);
+        persistdata.currentScene = 0;
+        persistdata.pickScenes[0] = Random.Range(1,5);
+        persistdata.pickScenes[1] = Random.Range(1, 5);
     }
     public void Exit()
     {
-
+        Debug.Log("exit");
     }
 
     public void loadNext()
     {
-        persistdata.currentHealth = playerRefrence.GetComponent<AttributeManager>().health;
+        Debug.Log(persistdata.currentScene);
+        if (playerRefrence !=null)
+        {
+            persistdata.currentHealth = playerRefrence.GetComponent<AttributeManager>().health;
+        }
         persistdata.currentScene++;
-        SceneManager.LoadScene(persistdata.currentScene);
+        SceneManager.LoadScene(persistdata.pickScenes[persistdata.currentScene]);
     }
     public void addEnemie()
     {
