@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isDodging = false;
 
+    [SerializeField] private GameObject bullet;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -61,14 +63,18 @@ public class PlayerMovement : MonoBehaviour
          // TODO: Make an isAttacking bool to prevent attack spam clicking
          if (Input.GetMouseButtonDown(1))
          {
-                anim.SetTrigger("SwordAttack");
+            anim.SetTrigger("SwordAttack");
          }
           
-         if(Input.GetKeyDown(KeyCode.Space))
+         if (Input.GetKeyDown(KeyCode.Space))
          {
-                anim.SetTrigger("DodgeRoll");
+            anim.SetTrigger("DodgeRoll");
          }
-       
+
+         if (Input.GetMouseButtonDown(0))
+        {
+            fireBullet();
+        }
 
     }
 
@@ -101,6 +107,14 @@ public class PlayerMovement : MonoBehaviour
         this.transform.rotation *= anim.deltaRotation;
         this.transform.position += anim.deltaPosition;
         isDodging = false;
+    }
+
+    private void fireBullet()
+    {
+        if (!isDodging)
+        {
+
+        }
     }
 
 }
