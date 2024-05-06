@@ -19,6 +19,6 @@ MonoBehaviour:
   casttime: 5
   ablilityRadius: 0
   range: 100
-  cooldown: 100
+  cooldown: 30
   bosscooldown: 1
   isSpawned: 0

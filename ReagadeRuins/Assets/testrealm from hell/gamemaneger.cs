@@ -60,7 +60,9 @@ public class gamemaneger : MonoBehaviour
     }
     public void Exit()
     {
-        Debug.Log("exit");
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+
     }
 
     public void loadNext()

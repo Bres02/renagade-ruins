@@ -35,7 +35,7 @@ public class AttributeManager : MonoBehaviour
         {
             if (this.gameObject.tag == "Player")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(0);
             }else if(this.gameObject.tag == "Enemy")
             {
                 Destroy(this.gameObject);

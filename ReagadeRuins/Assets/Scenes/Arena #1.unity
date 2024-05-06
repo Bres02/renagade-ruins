@@ -984,7 +984,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2, y: 6.08, z: 2}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!23 &245142045
 MeshRenderer:
@@ -1651,7 +1651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9146516284925084803, guid: 2477f1925337568479938d135074d127, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 6.08
       objectReference: {fileID: 0}
     - target: {fileID: 9146516284925084803, guid: 2477f1925337568479938d135074d127, type: 3}
       propertyPath: m_Center.y
@@ -2534,7 +2534,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2, y: 6.08, z: 2}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!23 &627506752
 MeshRenderer:
@@ -7010,7 +7010,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2, y: 6.08, z: 2}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!23 &1166287876
 MeshRenderer:
@@ -8886,7 +8886,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2, y: 6.08, z: 2}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!23 &1609733170
 MeshRenderer:
@@ -9976,6 +9976,7 @@ MonoBehaviour:
   orientation: {fileID: 393050671}
   anim: {fileID: 1788952937}
   isDodging: 0
+  canFire: 1
   bullet: {fileID: 7546464989957006558, guid: 2bc8c6ef61ad71444aad7acd8d283ed7, type: 3}
 --- !u!54 &1788952930
 Rigidbody:
@@ -10840,7 +10841,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 2}
+  m_Size: {x: 2, y: 6.08, z: 2}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!23 &1944206048
 MeshRenderer:

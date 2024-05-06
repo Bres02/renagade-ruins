@@ -8218,7 +8218,8 @@ MonoBehaviour:
   orientation: {fileID: 393050671}
   anim: {fileID: 1788952937}
   isDodging: 0
-  bullet: {fileID: 0}
+  canFire: 1
+  bullet: {fileID: 7546464989957006558, guid: 2bc8c6ef61ad71444aad7acd8d283ed7, type: 3}
 --- !u!54 &1788952930
 Rigidbody:
   m_ObjectHideFlags: 0
