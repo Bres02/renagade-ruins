@@ -485,6 +485,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyScript: {fileID: 11400000, guid: ee441b25c1b99fd4cb8b042b56b64b7a, type: 2}
   bulletSpawnPoint: {fileID: 3912144859680215070}
+  rotaiton:
+    value:
+      x: 0
+      y: 0
+      z: 0
+      w: 0
 --- !u!114 &7549216009866192606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScript: {fileID: 11400000, guid: ee441b25c1b99fd4cb8b042b56b64b7a, type: 2}
+  healthbar: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!195 &7065117815467130719
 NavMeshAgent:
   m_ObjectHideFlags: 0

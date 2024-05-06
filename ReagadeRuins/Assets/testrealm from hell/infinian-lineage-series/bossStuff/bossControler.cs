@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class bossControler : MonoBehaviour
 {
-    public float health;
     public AbiilityScriptableObject[] attacks;
     public Animator animator;
 
@@ -26,6 +25,7 @@ public class bossControler : MonoBehaviour
 
     private void Awake()
     {
+        gamemaneger.addEnemie();
         agent = GetComponent<NavMeshAgent>();
         for (int i = 0; i < attacks.Length; i++)
         {
