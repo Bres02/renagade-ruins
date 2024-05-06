@@ -20,8 +20,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
 
     public bool isDodging = false;
+    public bool canFire = true;
+
+    private float cooldown;
 
     [SerializeField] private GameObject bullet;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -50,6 +54,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
+        else
+        {
+            canFire = true;
+        }
     }
 
     // Records movement and attack input from player
@@ -111,9 +124,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void fireBullet()
     {
-        if (!isDodging)
+        if (!isDodging && canFire)
         {
+            canFire = false;
 
+            cooldown = 1.0f;
+
+            GameObject newBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            newBullet.GetComponent<Bullet>().setValues(this.gameObject.GetComponent<AttributeManager>().attack);
         }
     }
 

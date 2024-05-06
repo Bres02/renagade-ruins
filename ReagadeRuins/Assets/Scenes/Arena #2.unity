@@ -1350,6 +1350,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8088334238325633241, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
   m_PrefabInstance: {fileID: 351093492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &351093494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8956484937718150280, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
+  m_PrefabInstance: {fileID: 351093492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &365443797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,13 +3191,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
+      propertyPath: tilesLeft
+      value: 
+      objectReference: {fileID: 1093251433}
+    - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: maxEnemies
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: enemiesLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 419778484}
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: playerRefrence
       value: 
@@ -7602,12 +7611,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae50b6ff2fbd47242becd8eff420cc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  groundDrag: 5
+  moveSpeed: 10
+  groundDrag: 9
   orientation: {fileID: 393050671}
   anim: {fileID: 1788952937}
   isDodging: 0
-  bullet: {fileID: 0}
+  canFire: 1
+  bullet: {fileID: 7546464989957006558, guid: 2bc8c6ef61ad71444aad7acd8d283ed7, type: 3}
 --- !u!54 &1788952930
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7674,7 +7684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 351093494}
 --- !u!114 &1788952944
 MonoBehaviour:
   m_ObjectHideFlags: 0

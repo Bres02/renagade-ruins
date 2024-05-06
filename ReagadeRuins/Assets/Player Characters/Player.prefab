@@ -489,6 +489,8 @@ MonoBehaviour:
   orientation: {fileID: 7245011333450168568}
   anim: {fileID: 1342980371448948103}
   isDodging: 0
+  canFire: 1
+  bullet: {fileID: 7546464989957006558, guid: 2bc8c6ef61ad71444aad7acd8d283ed7, type: 3}
 --- !u!114 &2304970405703095306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
+  healthbar: {fileID: 0}
 --- !u!114 &4736955161334304614
 MonoBehaviour:
   m_ObjectHideFlags: 0

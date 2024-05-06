@@ -26,22 +26,25 @@ public class Bullet : MonoBehaviour
     {
         if (this.gameObject.tag == "PlayerBullet")
         {
-            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
             {
-                collision.gameObject.GetComponent<EnemyHealthControler>().TakeDamae(this.gameObject.GetComponent<AttributeManager>().attack);
+                collision.gameObject.GetComponent<EnemyHealthControler>().TakeDamae(10);
+                Destroy(this.gameObject);
+            } else if (collision.gameObject.tag == "Structure")
+            {
+                Destroy(this.gameObject);
+            }
+        } else
+        {
+            if (collision.gameObject.tag == "Player")
+        {
+                collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
                 Destroy(this.gameObject);
             } else if (collision.gameObject.tag == "Structure")
             {
                 Destroy(this.gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
-            Destroy(this.gameObject);
-        } else if (collision.gameObject.tag == "Structure")
-        {
-            Destroy(this.gameObject);
-        } 
+            
     }
 }

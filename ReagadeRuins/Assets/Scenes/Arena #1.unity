@@ -3237,13 +3237,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
+      propertyPath: tilesLeft
+      value: 
+      objectReference: {fileID: 1430525315}
+    - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: maxEnemies
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: enemiesLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1126133630}
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: playerRefrence
       value: 
@@ -9341,6 +9345,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8088334238325633241, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
   m_PrefabInstance: {fileID: 1709600051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1709600053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8956484937718150280, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
+  m_PrefabInstance: {fileID: 1709600051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1717623183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9967,7 +9976,7 @@ MonoBehaviour:
   orientation: {fileID: 393050671}
   anim: {fileID: 1788952937}
   isDodging: 0
-  bullet: {fileID: 0}
+  bullet: {fileID: 7546464989957006558, guid: 2bc8c6ef61ad71444aad7acd8d283ed7, type: 3}
 --- !u!54 &1788952930
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10034,7 +10043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 1709600053}
 --- !u!114 &1788952944
 MonoBehaviour:
   m_ObjectHideFlags: 0

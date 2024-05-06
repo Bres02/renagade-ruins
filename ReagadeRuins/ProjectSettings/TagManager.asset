@@ -10,6 +10,7 @@ TagManager:
   - PuzzleTile
   - buildup
   - Boss
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
