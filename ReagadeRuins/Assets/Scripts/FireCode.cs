@@ -20,7 +20,7 @@ public class FireDespawn : MonoBehaviour
 
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<AttributeManager>().TakeDamage(damage);
             Invoke("destroySelf", delay);

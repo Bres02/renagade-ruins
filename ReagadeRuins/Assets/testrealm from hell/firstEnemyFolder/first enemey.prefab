@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScript: {fileID: 11400000, guid: ee441b25c1b99fd4cb8b042b56b64b7a, type: 2}
+  currentHealth: 0
   healthbar: {fileID: 0}
   gameManager: {fileID: 0}
 --- !u!195 &7065117815467130719
