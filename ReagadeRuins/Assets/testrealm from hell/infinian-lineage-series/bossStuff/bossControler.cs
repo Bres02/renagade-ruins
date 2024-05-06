@@ -20,12 +20,12 @@ public class bossControler : MonoBehaviour
     public Transform attacklocation;
     
     private NavMeshAgent agent;
-    public gamemaneger gamemaneger;
+    public GameObject gamemaneger;
 
 
     private void Awake()
     {
-        gamemaneger.addEnemie();
+        gamemaneger.GetComponent<gamemaneger>().addEnemie();
         agent = GetComponent<NavMeshAgent>();
         for (int i = 0; i < attacks.Length; i++)
         {
@@ -69,13 +69,13 @@ public class bossControler : MonoBehaviour
             }
             if (abilityQued >= 0)
             {
-                agent.destination = gamemaneger.playerRefrence.transform.position;
-                Vector3 direction = (gamemaneger.playerRefrence.transform.position - transform.position).normalized;
+                agent.destination = gamemaneger.GetComponent<gamemaneger>().playerRefrence.transform.position;
+                Vector3 direction = (gamemaneger.GetComponent<gamemaneger>().playerRefrence.transform.position - transform.position).normalized;
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
                 float angle = Vector3.Angle(transform.forward, direction);
 
-                if (attacks[abilityQued].range > Vector3.Distance(this.transform.position, gamemaneger.playerRefrence.transform.position) && canAttack && angle < 5f)
+                if (attacks[abilityQued].range > Vector3.Distance(this.transform.position, gamemaneger.GetComponent<gamemaneger>().playerRefrence.transform.position) && canAttack && angle < 5f)
                 {
                     agent.destination = this.transform.position;
                     isCasting = true;
@@ -84,7 +84,7 @@ public class bossControler : MonoBehaviour
                 }
                 else
                 {
-                    agent.destination = gamemaneger.playerRefrence.transform.position;
+                    agent.destination = gamemaneger.GetComponent<gamemaneger>().playerRefrence.transform.position;
                 }
             }
             

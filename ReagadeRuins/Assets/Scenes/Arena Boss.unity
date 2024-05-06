@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3042,7 +3042,7 @@ PrefabInstance:
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: enemiesLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1367989784}
     - target: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
       propertyPath: playerRefrence
       value: 
@@ -6361,7 +6361,7 @@ PrefabInstance:
     - target: {fileID: 7028875021996694597, guid: ad86e6c78280aeb4d912ebd1ed4fd9dc, type: 3}
       propertyPath: gamemaneger
       value: 
-      objectReference: {fileID: 2115095997}
+      objectReference: {fileID: 1016774157}
     - target: {fileID: 7232437021313377866, guid: ad86e6c78280aeb4d912ebd1ed4fd9dc, type: 3}
       propertyPath: m_Name
       value: FinalBoss
@@ -6692,6 +6692,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2977485374516744135, guid: ebd5cf8e358ced44e805bff9efe1fec9, type: 3}
   m_PrefabInstance: {fileID: 379242118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1524646004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8956484937718150280, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
+  m_PrefabInstance: {fileID: 1475906992}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550373864
 GameObject:
@@ -8280,7 +8285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 1524646004}
 --- !u!114 &1788952944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9375,17 +9380,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebd5cf8e358ced44e805bff9efe1fec9, type: 3}
---- !u!114 &2115095997 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1149454364729355100, guid: af4ca335719a93c47826cb667dd8aa5e, type: 3}
-  m_PrefabInstance: {fileID: 703931843}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016774157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aef3f6171afc3647b79b728b54779b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2115374919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2977485374516744135, guid: ebd5cf8e358ced44e805bff9efe1fec9, type: 3}
