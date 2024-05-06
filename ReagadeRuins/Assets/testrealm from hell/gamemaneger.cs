@@ -54,7 +54,7 @@ public class gamemaneger : MonoBehaviour
     public void setStats()
     {
         persistdata.currentHealth = persistdata.maxHealth;
-        persistdata.currentScene = 0;
+        persistdata.currentScene = -1;
         persistdata.pickScenes[0] = Random.Range(1,5);
         persistdata.pickScenes[1] = Random.Range(1, 5);
     }
@@ -103,7 +103,7 @@ public class gamemaneger : MonoBehaviour
     {
         for (int i = 0; i < spawners.Length; i++)
         {
-            spawners[i].GetComponent<enemyspawner>().enabled=false;
+            spawners[i].GetComponent<enemyspawner>().active = false;
         }
     }
 
@@ -120,7 +120,8 @@ public class gamemaneger : MonoBehaviour
         }
         tilesLeft.text = (tilesLeftNum-x).ToString();
         if (x == puzzleTiles.Length) 
-        {   
+        {
+            Debug.Log("Done!");
             //UnityEditor.EditorApplication.isPlaying = false;
             puzzleComplete = true;
             stopSpawners();
