@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 488032653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1408524379}
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 1479372276
@@ -1429,7 +1429,8 @@ MonoBehaviour:
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
-    m_Bits: 4294967295
+    serializedVersion: 2
+    m_Bits: 63
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -5400,7 +5401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8088334238325633241, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -165
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 8088334238325633241, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5899,7 +5900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5957,6 +5958,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1310417126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8956484937718150280, guid: 4e435b4973d47734c80949ca71b832e1, type: 3}
+  m_PrefabInstance: {fileID: 594516168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1310953388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6081,21 +6087,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2977485374516744135, guid: ebd5cf8e358ced44e805bff9efe1fec9, type: 3}
   m_PrefabInstance: {fileID: 1329909172}
   m_PrefabAsset: {fileID: 0}
---- !u!115 &1408524379
-MonoScript:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 7
-  m_DefaultReferences: {}
-  m_Icon: {fileID: 0}
-  m_Type: 0
-  m_ExecutionOrder: 0
-  m_ClassName: NavMeshSurface
-  m_Namespace: Unity.AI.Navigation
-  m_AssemblyName: Unity.AI.Navigation
 --- !u!1001 &1420413550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8160,7 +8151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attack: 10
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 1310417126}
 --- !u!114 &1788952944
 MonoBehaviour:
   m_ObjectHideFlags: 0
