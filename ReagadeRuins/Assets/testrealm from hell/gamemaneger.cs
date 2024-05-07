@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -50,33 +49,29 @@ public class gamemaneger : MonoBehaviour
     }
     private void Update()
     {
-        if (puzzleComplete && enemiesLeftNum == 0)
-        {
-            loadNext();
-        }
+
     }
     public void setStats()
     {
         persistdata.currentHealth = persistdata.maxHealth;
         persistdata.currentScene = -1;
-        persistdata.pickScenes[0] = Random.Range(1,5);
-        persistdata.pickScenes[1] = Random.Range(1, 5);
+        persistdata.pickScenes[0] = Random.Range(1,4);
+        persistdata.pickScenes[1] = Random.Range(1, 4);
     }
     public void Exit()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
 
     }
 
     public void loadNext()
     {
-        Debug.Log(persistdata.currentScene);
         if (playerRefrence !=null)
         {
             persistdata.currentHealth = playerRefrence.GetComponent<AttributeManager>().health;
         }
         persistdata.currentScene++;
+        Debug.Log(persistdata.currentScene);
         SceneManager.LoadScene(persistdata.pickScenes[persistdata.currentScene]);
     }
     public void addEnemie()
@@ -131,7 +126,6 @@ public class gamemaneger : MonoBehaviour
         tilesLeft.text = (tilesLeftNum-x).ToString();
         if (x == puzzleTiles.Length) 
         {
-            Debug.Log("Done!");
             //UnityEditor.EditorApplication.isPlaying = false;
             puzzleComplete = true;
             stopSpawners();

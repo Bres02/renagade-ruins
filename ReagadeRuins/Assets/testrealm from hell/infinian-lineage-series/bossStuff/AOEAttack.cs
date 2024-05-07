@@ -54,14 +54,4 @@ public class AOEAttack : MonoBehaviour
             transform.GetComponent<BoxCollider>().enabled = false;
         }
     }
-
-
-    private void OnDrawGizmos()
-    {
-        //Shows the radius as a white circle
-        Gizmos.color = Color.blue;
-        UnityEditor.Handles.DrawWireDisc(transform.position, new Vector3(0, 1, 0), range);
-
-
-    }
 }
