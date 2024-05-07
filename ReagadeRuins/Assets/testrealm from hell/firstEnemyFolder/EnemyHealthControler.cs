@@ -9,6 +9,8 @@ public class EnemyHealthControler : MonoBehaviour
     public int currentHealth;
     public GameObject healthbar;
     public GameObject gameManager;
+
+
     private void Awake()
     {
         gameManager = GameObject.Find("GameManeger");
@@ -17,6 +19,7 @@ public class EnemyHealthControler : MonoBehaviour
     public void TakeDamae(int damage)
     {
         currentHealth -= damage;
+
         if (currentHealth <= 0)
         {
             gameManager.GetComponent<gamemaneger>().RemoveEnemie();

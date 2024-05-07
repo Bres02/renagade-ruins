@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private GameObject bullet;
 
+    [SerializeField] private AudioSource SoundEffectPlayer;
+    [SerializeField] private AudioClip swordSound;
+    [SerializeField] private AudioClip bulletSound;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -76,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
          // TODO: Make an isAttacking bool to prevent attack spam clicking
          if (Input.GetMouseButtonDown(1))
          {
+            SoundEffectPlayer.PlayOneShot(swordSound);
             anim.SetTrigger("SwordAttack");
          }
           
@@ -129,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
             canFire = false;
 
             cooldown = 1.0f;
+
+            SoundEffectPlayer.PlayOneShot(bulletSound);
 
             GameObject newBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
             newBullet.GetComponent<Bullet>().setValues(this.gameObject.GetComponent<AttributeManager>().attack);

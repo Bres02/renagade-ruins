@@ -9,6 +9,11 @@ public class AttributeManager : MonoBehaviour
     public int health;
     public int attack;
     public GameObject healthbar;
+
+    [SerializeField] AudioSource SoundEffectPlayer;
+    [SerializeField] AudioClip hurtSound;
+
+
     private void Awake()
     {
         healthbar.GetComponent<Slider>().value = health;
@@ -24,7 +29,8 @@ public class AttributeManager : MonoBehaviour
             }
             else
             {
-                
+                SoundEffectPlayer.PlayOneShot(hurtSound);
+
                 health -= amount;
                 healthbar.GetComponent<Slider>().value = health;
             }

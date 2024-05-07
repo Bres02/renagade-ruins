@@ -23,6 +23,10 @@ public class gamemaneger : MonoBehaviour
     public TMP_Text tilesLeft;
     public int tilesLeftNum;
 
+    public AudioSource SoundEffectPlayer;
+    public AudioClip deathSound;
+    public AudioClip puzzleDing;
+
     private void Awake()
     {
         tilesLeftNum = puzzleTiles.Length;
@@ -95,6 +99,9 @@ public class gamemaneger : MonoBehaviour
     public void RemoveEnemie()
     {
         enemiesLeftNum--;
+
+        SoundEffectPlayer.PlayOneShot(deathSound);
+
         enemiesLeft.text = enemiesLeftNum.ToString();
         if ((maxEnemies < 10000 || puzzleComplete) && enemiesLeftNum <= 0)
         {
@@ -117,7 +124,8 @@ public class gamemaneger : MonoBehaviour
         {
             if (puzzleTiles[i].GetComponent<PuzzleTile>().on)
             {
-                x += 1;             
+                x += 1;
+                SoundEffectPlayer.PlayOneShot(puzzleDing);
             }
         }
         tilesLeft.text = (tilesLeftNum-x).ToString();

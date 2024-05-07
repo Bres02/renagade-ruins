@@ -507,6 +507,8 @@ MonoBehaviour:
   currentHealth: 10
   healthbar: {fileID: 0}
   gameManager: {fileID: 0}
+  SoundEffectPlayer: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: dde0dbc2782355245b61778d625ffccb, type: 3}
 --- !u!195 &7065117815467130719
 NavMeshAgent:
   m_ObjectHideFlags: 0
