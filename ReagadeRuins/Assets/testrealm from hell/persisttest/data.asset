@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2d741e0a3e7784c99a56e5c0acfcd7, type: 3}
   m_Name: data
   m_EditorClassIdentifier: 
-  pickScenes: 02000000020000000500000006000000
+  pickScenes: 01000000030000000500000006000000
   maxHealth: 100
-  currentHealth: 80
+  currentHealth: 45
   currentScene: 3
